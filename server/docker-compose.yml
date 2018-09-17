@@ -1,0 +1,19 @@
+version: "3.5"
+services:
+  php:
+    build: .
+    container_name: codeline-fe
+    restart: always
+    volumes:
+      - ./www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./code:/code
+  nginx:
+    image: nginx:1.15.3
+    depends_on:
+      - php
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./code:/code
+      - ./site.conf:/etc/nginx/conf.d/site.conf

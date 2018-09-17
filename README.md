@@ -1,0 +1,3 @@
+   - I have setup the project (server) on docker. If you try to test it locally just "docker-compose up" inside server and edit your hosts file and put "codeline.local" pointing to "127.0.0.1"
+   - Alternatively, you can edit the config.ts file in the frontend directory and change the "weatherApiUrl"
+   - Lazy loading of the components (code-splitting) has not been implemented. But it can be done easily.
